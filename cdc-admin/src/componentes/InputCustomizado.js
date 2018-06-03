@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 
 class InputCustomizado extends Component {
     render() {
-        { console.log(this.props) }
         return (
             <div className="pure-control-group">
                 <label htmlFor={this.props.id}>{this.props.label}</label>
