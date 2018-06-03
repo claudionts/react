@@ -6,6 +6,7 @@ class InputSubmit extends Component {
             <div className="pure-control-group">
                 <label></label>
                 <button type="submit" className="pure-button pure-button-primary">{this.props.label}</button>
+                <span className="error"></span>
             </div>
         );
     }
