@@ -2,12 +2,26 @@ import React, { Component } from 'react';
 import Foto from './Foto';
 
 export default class Timeline extends Component {
+
+  constructor() {
+    super();
+    this.state = { fotos: [] };
+  }
+
+  componentDidMount() {
+    fetch('http://instalura-api.herokuapp.com/api/public/fotos/rafael')
+      .then(response => response.json())
+      .then(fotos => {
+        this.setState({ fotos: fotos });
+      });
+  }
+
   render() {
     return (
       <div className="fotos container">
-        <Foto />
-
-        <Foto />
+        {
+          this.state.fotos.map(foto => <Foto key={foto.id} foto={foto} />)
+        }
       </div>
     );
   }
